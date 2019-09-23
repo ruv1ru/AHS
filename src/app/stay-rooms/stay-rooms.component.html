@@ -1,0 +1,43 @@
+
+<div class="row" >
+    <div *ngFor="let room of rooms" class="post mb-5" style="border:1px solid black; margin-bottom: 10px; padding: 10px;">
+        <div class="post-body">
+            <h3 class="post-title">
+                <!--<a routerLink="/p/{{room.seoName}}" class="text-dark">{{room.title}}</a>-->
+                {{room.title}}
+            </h3>
+            <div>
+                <div>
+                    <h6 class="text-muted">SLEEPS {{room.sleeps}}</h6>
+                </div>
+            </div>
+            <p>{{room.description}} [...]</p>
+            <!--<a class="badge text-uppercase" routerLink="/p/{{room.seoName}}">see prices and room details</a>-->
+            <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                <mat-expansion-panel-header>
+                <mat-panel-title>
+                    See Room Details
+                </mat-panel-title>
+                <mat-panel-description>
+                    {{panelOpenState ? '' : ''}}
+                </mat-panel-description>
+                </mat-expansion-panel-header>
+                <p>
+                    {{room.longDescription}}
+                </p>
+                <p>
+                        <mat-list>
+                        <h3 mat-subheader>Facilities</h3>
+                        <mat-list-item *ngFor="let facility of room.facilities">
+                            <h4 mat-line>{{facility}}</h4>
+                        </mat-list-item>
+                        </mat-list>
+
+                </p>
+            </mat-expansion-panel>
+         </div>
+         <br/>
+     </div>
+</div>
+
+
