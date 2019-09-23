@@ -35,7 +35,7 @@ const appRoutes: Routes = [
     BrowserAnimationsModule,
     NgMaterialModule,
     AgmCoreModule.forRoot(
-      { apiKey: 'AIzaSyA9UdeOUKmdCtPaxX2lmS2YQPKuxva6hmM' }
+      { apiKey: '' }
     ),
     RouterModule.forRoot(
       appRoutes,
